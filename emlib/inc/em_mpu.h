@@ -236,6 +236,6 @@ __STATIC_INLINE void MPU_Enable(uint32_t flags)
 }
 #endif
 
-#endif /* defined(__MPU_PRESENT) && (EBI_COUNT == 1) */
+#endif /* defined(__MPU_PRESENT) && (__MPU_PRESENT == 1) */
 
 #endif /* __EM_MPU_H */

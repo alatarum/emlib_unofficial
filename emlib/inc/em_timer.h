@@ -286,11 +286,13 @@ typedef struct
   /** Input capture edge select. */
   TIMER_Edge_TypeDef         edge;
 
+#if defined(ADC_PRESENT)
   /**
    * Peripheral reflex system trigger selection. Only applicable if @p prsInput
    * is enabled.
    */
   TIMER_PRSSEL_TypeDef       prsSel;
+#endif
 
   /** Counter underflow output action. */
   TIMER_OutputAction_TypeDef cufoa;

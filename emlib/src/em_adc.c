@@ -31,6 +31,7 @@
  *
  ******************************************************************************/
 #include "em_adc.h"
+#if defined(ADC_COUNT) && (ADC_COUNT > 0)
 #include "em_cmu.h"
 #include "em_assert.h"
 
@@ -523,3 +524,5 @@ uint8_t ADC_TimebaseCalc(uint32_t hfperFreq)
 
 /** @} (end addtogroup ADC) */
 /** @} (end addtogroup EM_Library) */
+
+#endif /* defined(ADC_COUNT) && (ADC_COUNT > 0) */

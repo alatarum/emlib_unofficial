@@ -31,6 +31,7 @@
  *
  ******************************************************************************/
 #include "em_mpu.h"
+#if defined(__MPU_PRESENT) && (__MPU_PRESENT == 1)
 #include "em_assert.h"
 
 
@@ -118,5 +119,7 @@ void MPU_ConfigureRegion(const MPU_RegionInit_TypeDef *init)
 }
 
 
-/** @} (end addtogroup CMU) */
+/** @} (end addtogroup MPU) */
 /** @} (end addtogroup EM_Library) */
+
+#endif /* defined(__MPU_PRESENT) && (__MPU_PRESENT == 1) */

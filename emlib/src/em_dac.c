@@ -31,6 +31,7 @@
  *
  ******************************************************************************/
 #include "em_dac.h"
+#if defined(DAC_COUNT) && (DAC_COUNT > 0)
 #include "em_cmu.h"
 #include "em_assert.h"
 #include "em_bitband.h"
@@ -289,3 +290,5 @@ void DAC_Reset(DAC_TypeDef *dac)
 
 /** @} (end addtogroup DAC) */
 /** @} (end addtogroup EM_Library) */
+
+#endif /* defined(DAC_COUNT) && (DAC_COUNT > 0) */

@@ -33,8 +33,10 @@
 #ifndef __EM_ADC_H
 #define __EM_ADC_H
 
-#include <stdbool.h>
 #include "em_device.h"
+
+#if defined(ADC_COUNT) && (ADC_COUNT > 0)
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -558,5 +560,7 @@ uint8_t ADC_TimebaseCalc(uint32_t hfperFreq);
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* defined(ADC_COUNT) && (ADC_COUNT > 0) */
 
 #endif /* __EM_ADC_H */

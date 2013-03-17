@@ -136,7 +136,7 @@ void TIMER_Init(TIMER_TypeDef *timer, const TIMER_Init_TypeDef *init)
   {
     timer->CMD = TIMER_CMD_STOP;
   }
-  
+
   /* Reset counter */
   timer->CNT = _TIMER_CNT_RESETVALUE;
 
@@ -192,7 +192,9 @@ void TIMER_InitCC(TIMER_TypeDef *timer,
   timer->CC[ch].CTRL =
     ((uint32_t)(init->eventCtrl) << _TIMER_CC_CTRL_ICEVCTRL_SHIFT) |
     ((uint32_t)(init->edge) << _TIMER_CC_CTRL_ICEDGE_SHIFT) |
+#if defined(ADC_PRESENT)
     ((uint32_t)(init->prsSel) << _TIMER_CC_CTRL_PRSSEL_SHIFT) |
+#endif
     ((uint32_t)(init->cufoa) << _TIMER_CC_CTRL_CUFOA_SHIFT) |
     ((uint32_t)(init->cofoa) << _TIMER_CC_CTRL_COFOA_SHIFT) |
     ((uint32_t)(init->cmoa) << _TIMER_CC_CTRL_CMOA_SHIFT) |
